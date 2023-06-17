@@ -1,8 +1,7 @@
 import requests
 
 
-def get_response(endpoint_url, return_json=True):
-    TOKEN = ''
+def get_response(endpoint_url, TOKEN, return_json=True):
     API_URL = f'https://api.github.com'
     headers = {'Authorization': f'Token {TOKEN}'}
 

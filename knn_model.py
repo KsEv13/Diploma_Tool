@@ -1,8 +1,8 @@
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 import time
-'''
-def knn_get_level(developer, k):
+
+def knn_get_level(github_name, k):
     model = KNeighborsClassifier(k)
     features = ['Organizations Count', 'Followers', 'Repositories Count', 'Projects Count', 'Stars',
                 'Forks', 'Languages Count', 'Repositories for 3 Languages', 'Registered Days', 'Contributions']
@@ -20,9 +20,5 @@ def knn_get_level(developer, k):
     x_train = train[features]
     y_train = train[to_predict]
     model.fit(x_train, y_train)
-    y_pred = model.predict(developer)
+    y_pred = model.predict(github_name)
     return str(y_pred[0])
-'''
-def knn_get_level(developer, k):
-    time.sleep(12)
-    return "Junior"

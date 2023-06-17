@@ -11,8 +11,8 @@ def decode_levels(predicted_value):
     return predicted_level
 
 
-def make_user_feature_vector(username):
-    user = User(username)
+def make_user_feature_vector(username, github_token):
+    user = User(username, github_token=github_token)
 
     user_feature_dict = {
         'Organizations Count': [user.organizations_count],

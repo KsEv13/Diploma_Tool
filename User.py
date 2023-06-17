@@ -8,7 +8,8 @@ from is_good_commit_message import is_good_commit_message
 
 class User:
 
-    def __init__(self, username):
+    def __init__(self, username, github_token):
+        self.github_token = github_token
         self.username = username
         self.organizations_count = 0
         self.followers = 0
@@ -40,7 +41,7 @@ class User:
         endpoint_url = f"users/{self.username}/orgs"
         
         print('USERNAME: ', self.username)
-        organizations = get_response(endpoint_url=endpoint_url)
+        organizations = get_response(endpoint_url=endpoint_url, TOKEN=self.github_token)
 
         # organizations = [i['login'] for i in organizations]
         self.organizations_count = len(organizations)
@@ -48,18 +49,18 @@ class User:
 
     def get_user_followers(self):
         endpoint_url = f"users/{self.username}/followers"
-        self.followers = len(get_response(endpoint_url=endpoint_url))       
+        self.followers = len(get_response(endpoint_url=endpoint_url, TOKEN=self.github_token))       
 
     # Функция для получения всех репозиториев пользователя на GitHub
     def get_user_repositories(self):
         endpoint_url = f"users/{self.username}/repos"
-        self.repos = get_response(endpoint_url=endpoint_url)
+        self.repos = get_response(endpoint_url=endpoint_url, TOKEN=self.github_token)
         self.repositories_count = len(self.repos)
 
     # Функция для получения проектов пользователя на GitHub
     def get_user_projects(self):
         endpoint_url = f"users/{self.username}/projects"
-        self.progects = get_response(endpoint_url=endpoint_url)
+        self.progects = get_response(endpoint_url=endpoint_url, TOKEN=self.github_token)
         self.projects_count = len(self.progects)
 
     def get_user_stars(self):
@@ -80,7 +81,7 @@ class User:
         languages = {}
         for repo in self.repos:
             endpoint_url = repo["languages_url"]
-            languages_in_repo = get_response(endpoint_url=endpoint_url)
+            languages_in_repo = get_response(endpoint_url=endpoint_url, TOKEN=self.github_token)
             for lang in languages_in_repo:
                 if lang in languages:
                     languages[lang] += 1
@@ -115,7 +116,7 @@ class User:
     #  Функция для получения даты регистрации пользователя GitHub
     def get_user_registration_date(self):
         endpoint_url = f"users/{self.username}"
-        self.registration_date = get_response(endpoint_url=endpoint_url)['created_at']
+        self.registration_date = get_response(endpoint_url=endpoint_url, TOKEN=self.github_token)['created_at']
 
     #  Функция для получения даты регистрации пользователя GitHub
     def get_user_registered_days(self):
@@ -129,7 +130,7 @@ class User:
         GITHUB_URL = 'https://github.com/'
         url = f'{GITHUB_URL}{self.username}'
 
-        response = get_response(endpoint_url=url, return_json = False)
+        response = get_response(endpoint_url=url, TOKEN=self.github_token, return_json = False)
 
         bs = BeautifulSoup(response.content, "html.parser")
         total = bs.find('div', {'class': 'js-yearly-contributions'}).findNext('h2')
@@ -146,7 +147,7 @@ class User:
 
             repo_name = repo["name"]
             commits_endpoint_url = f"repos/{self.username}/{repo_name}/commits"
-            repo_commits = get_response(endpoint_url=commits_endpoint_url)
+            repo_commits = get_response(endpoint_url=commits_endpoint_url, TOKEN=self.github_token)
 
             # Проходимся по коммитам и анализируем содержимое файлов
             for commit in repo_commits:
@@ -160,7 +161,7 @@ class User:
                         good_message_commits += 1
 
                     commit_url = commit["url"]
-                    commit_url_response = get_response(endpoint_url=commit_url)
+                    commit_url_response = get_response(endpoint_url=commit_url, TOKEN=self.github_token)
 
                     commit_files = commit_url_response["files"]
                     
