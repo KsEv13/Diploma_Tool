@@ -39,6 +39,7 @@ def get_result():
 
 @app.route('/result')
 def result():
+    global level
     return render_template('result.html', level=level)
 
 if __name__ == "__main__":
