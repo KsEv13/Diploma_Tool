@@ -109,7 +109,8 @@ For Unix/macOS:
 2. Provide the github name of a developer and your github token
 3. Wait for result!
 
-<video src='Demo.mov' width=400/>
+<video width="630" src="Demo.mov"></video>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
