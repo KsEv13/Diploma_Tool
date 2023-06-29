@@ -5,6 +5,8 @@ from sklearn.metrics import classification_report
 from knn_model import knn_get_level
 app = Flask(__name__)
 
+import pandas as pd
+
 github_token = ""
 github_name = ""
 
@@ -28,9 +30,15 @@ def index():
 def get_result():
     global level, github_name, github_token
 
-    developer = make_user_feature_vector(github_name, github_token=github_token)
+    df = pd.read_csv('synthetic_data_Junior.csv')
+    features = ['Organizations Count', 'Followers', 'Repositories Count', 'Projects Count', 'Stars',
+                'Forks', 'Languages Count', 'Repositories for 3 Languages', 'Registered Days', 'Contributions']
+
+    data = df[features]
+    developer = data.iloc[:1]
+    # developer = make_user_feature_vector(github_name, github_token=github_token)
     # normalize every feature column
-    developer = normalize_user_feature_vector(developer)
+    # developer = normalize_user_feature_vector(developer)
     level = knn_get_level(developer, 3)
     level = decode_levels(level)
 

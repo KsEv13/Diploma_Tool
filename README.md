@@ -1,23 +1,6 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -75,7 +58,6 @@ Determination of Developers based on their GitHub Profiles</h3>
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 This tool was developed as a thesis work "Machine Learning-based Tool for Automated Proficiency Level Determination of Developers based on their GitHub Profiles". 
 The KNN model scored the highest on the macro F1-score, which is why the KNN model is used in this tool. 
 The tool receives only the GitHub name as input and the output is a model-defined level.
@@ -99,21 +81,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-Will be changed in the next commit
-* sklearn
-* flask
-* requests
-* datetime
-* json
-* bs4
-* nltk.stem
-* re
-* pandas
-* time
-
+You just need to install all dependencies from `requirements` file.
+For Windows:
   ```sh
-  npm install flask@latest -g
+    py -m pip install -r requirements.txt
+  ```
+
+For Unix/macOS:
+  ```sh
+    python -m pip install -r requirements.txt
   ```
 
 ### Installation
@@ -174,7 +150,9 @@ Don't forget to give the project a star! Thanks again!
 ## Contact
 
 Kseniya Evdokimova - k.evdokimova@innopolis.university
+
 Amina Khusnutdinova - a.khusnutdinova@innopolis.university
+
 Project Link: [https://github.com/KsEv13/Diploma_Tool](https://github.com/KsEv13/Diploma_Tool)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

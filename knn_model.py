@@ -1,6 +1,5 @@
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
-import time
 
 def knn_get_level(github_name, k):
     model = KNeighborsClassifier(k)
