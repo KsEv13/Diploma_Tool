@@ -99,27 +99,18 @@ For Unix/macOS:
    ```sh
    git clone https://github.com/KsEv13/Diploma_Tool.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your GitHub token in `main.py`
-   ```py
-   github_token = 'ENTER YOUR GITHUB TOKEN';
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Demo will be added in the next commit
+1. Run `main.py`
+2. Provide the github name of a developer and your github token
+3. Wait for result!
 
+<video src='Demo.mov' width=400/>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
