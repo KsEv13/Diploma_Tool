@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 github_token = ""
 github_name = ""
-
+level = ""
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -45,7 +45,7 @@ def get_result():
 @app.route('/result')
 def result():
     global level
-    return render_template('result.html', level=level)
+    return render_template('result.html', my_level=level)
 
 
 if __name__ == "__main__":
