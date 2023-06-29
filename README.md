@@ -14,7 +14,7 @@ Determination of Developers based on their GitHub Profiles</h3>
 
   <p align="center">
     This tool can provide a valuable assistance during an estimation of programmers' skills. 
-    It automatically estimates the level of qualifications (Junior/Middle/Senior) based on provided GitHub profile.
+    It automatically estimates the level of qualifications (Junior/Middle/Senior) based on provided GitHub profile. 
     <br />
     <a href="https://github.com/KsEv13/Diploma_Tool"><strong>Explore the docs »</strong></a>
     <br />
@@ -61,6 +61,8 @@ Determination of Developers based on their GitHub Profiles</h3>
 This tool was developed as a thesis work "Machine Learning-based Tool for Automated Proficiency Level Determination of Developers based on their GitHub Profiles". 
 The KNN model scored the highest on the macro F1-score, which is why the KNN model is used in this tool. 
 The tool receives only the GitHub name as input and the output is a model-defined level.
+
+Demo is available at `Demo.mov`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
