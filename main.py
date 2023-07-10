@@ -11,6 +11,7 @@ github_token = ""
 github_name = ""
 level = ""
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # Домашняя страница
