@@ -64,10 +64,10 @@ The tool receives only the GitHub name as input and the output is a model-define
 
 Demo is available at `Demo/Demo.mov`
 
-![Step 1](Demo\step1.JPG)
-![Step 2](Demo\step2.JPG)
-![Loading](Demo\loading.JPG)
-![Step 3](Demo\step3.JPG)
+![Step 1](./Demo/step1.JPG)
+![Step 2](./Demo/step2.JPG)
+![Loading](./Demo/loading.JPG)
+![Step 3](./Demo/step3.JPG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
